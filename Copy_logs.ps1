@@ -1,0 +1,2 @@
+﻿#get-childitem -Filter "*.log" -Recurse -depth 1 | Sort LastWriteTime -Descending | Where-Object{$_.LastWriteTime.Date -eq (Get-Date).Date } | Select-Object -ExpandProperty FullName | Copy-Item -Destination 'D:\Mateusz' -Force;
+get-childitem -Filter "*.mp3" -Recurse -depth 1 | Sort LastWriteTime -Descending | Select-Object -First 1 | Select-Object -ExpandProperty FullName | Copy-Item -Destination "D:\Mateusz"
